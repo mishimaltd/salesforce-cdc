@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <version>49.0</version>
+ 
+    <fullName>Propel Audit Data Capture</fullName>
+ 
+    <!-- 
+            C U S T O M  S E T T I N G S
+    -->
+
+    <types>
+        <members>ChangeEventSettings__c</members>
+        <name>CustomObject</name>
+    </types>
+    
+
+    <!-- 
+            A P E X  C L A S S E S 
+    -->
+
+    <types>
+        <members>AsyncChangeEventPublisher</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>BatchChangeEventGenerator</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeCaptureEvent</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeCaptureEventPublisher</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeCaptureEventUtils</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeEventHandler</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeEventTriggerHandler</members>
+        <name>ApexClass</name>
+    </types>
+
+
+    <!-- 
+            A P E X  T E S T  C L A S S E S 
+    -->
+
+    <types>
+        <members>BatchChangeEventGeneratorTest</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeCaptureEventPublisherTest</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeCaptureEventUtilsTest</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ChangeEventHandlerTest</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>ItemChangeEventTriggerTest</members>
+        <name>ApexClass</name>
+    </types>
+    
+
+    <!-- 
+            A P E X  T R I G G E R S
+    -->
+    
+    <types>
+        <members>AssemblyChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>CategoryChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>IdentifierChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+     <types>
+        <members>InclusionSetCollectionChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>ItemChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>ItemRevisionChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>ItemToOfferingChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>OfferingPricePlanChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>OfferingUpgradeOfferingChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>PartyChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>ProductToLVChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>ProductToPartyChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>RelatedItemChangeEventTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+</Package>
