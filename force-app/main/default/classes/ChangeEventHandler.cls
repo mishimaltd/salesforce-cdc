@@ -32,7 +32,7 @@ public with sharing class ChangeEventHandler {
                 .objectName((String)obj.get('name'))
                 .action('U')
                 .oldFieldValues(new Map<String,Object>())
-                .newFieldValues(generatePayload(newObj, changedFields))
+                .newFieldValues(generatePayload(obj, changedFields))
                 .fullPayload(generateFullPayload(obj))
                 .createdDate((DateTime)obj.get('lastmodifieddate'))
                 .build());
@@ -48,15 +48,15 @@ public with sharing class ChangeEventHandler {
             SObject oldObj = oldEvents.get(objId);
             Set<String> changedFields = getChangedFields(newObj, oldObj);
             events.add(new ChangeCaptureEvent.ChangeCaptureEventBuilder()
-                .userName(userNames.get(obj.id))
-                .objectId(obj.id)
-                .objectType(obj.getSObjectType().getDescribe().getName())
-                .objectName((String)obj.get('name'))
+                .userName(userNames.get(newObj.id))
+                .objectId(newObj.id)
+                .objectType(newObj.getSObjectType().getDescribe().getName())
+                .objectName((String)newObj.get('name'))
                 .action('U')
                 .oldFieldValues(generatePayload(oldObj, changedFields))
                 .newFieldValues(generatePayload(newObj, changedFields))
-                .fullPayload(generateFullPayload(obj))
-                .createdDate((DateTime)obj.get('lastmodifieddate'))
+                .fullPayload(generateFullPayload(newObj))
+                .createdDate((DateTime)newObj.get('lastmodifieddate'))
                 .build());
         }
 		sendChangeEvents(events);
@@ -66,7 +66,7 @@ public with sharing class ChangeEventHandler {
         List<ChangeCaptureEvent> events = new List<ChangeCaptureEvent>();
         Map<Id,String> userNames = getUserNames(oldEvents.values());
         for(Id objId: oldEvents.keySet()) {
-            SObject oldObj = oldEvents.get(objId);
+            SObject obj = oldEvents.get(objId);
             events.add(new ChangeCaptureEvent.ChangeCaptureEventBuilder()
                 .userName(userNames.get(obj.id))
                 .objectId(obj.id)
@@ -74,11 +74,10 @@ public with sharing class ChangeEventHandler {
                 .objectName((String)obj.get('name'))
                 .action('U')
                 .oldFieldValues(generateFullPayload(obj))
-                .newFieldValues(new Map<String,Object())
+                .newFieldValues(new Map<String,Object>())
                 .fullPayload(generateFullPayload(obj))
                 .createdDate(DateTime.now())
                 .build());
-            );
         }
         sendChangeEvents(events);
     }
