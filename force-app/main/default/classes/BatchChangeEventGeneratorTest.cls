@@ -1,7 +1,7 @@
 @isTest
 private class BatchChangeEventGeneratorTest {
     
-    private static Integer eventCount = 10;
+    private static Integer eventCount = 5;
 
     @testSetup static void setup() {
         List<Account> accounts = new List<Account>();
